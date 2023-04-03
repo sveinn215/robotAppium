@@ -9,17 +9,29 @@ ${APP}    ${CURDIR}/Login & Registration Example_3.0_Apkpure.apk
 ${APP_PACKAGE}    com.appsgallery.sagar.loginregistrationexample
 ${APP_ACTIVITY}    com.appsgallery.sagar.loginregistrationexample.MainActivity
 *** Test cases ***
-Positive Test
+Valid Account Test
     Launch Mobile Application
     Register User
     Go Back
-    Login User
+    Login
     Verify Success Login
     Close Application
 
-Negative Test
+Invalid Account Test
     Launch Mobile Application
-    Login User
+    Login
+    Verify Failed Login
+    Close Application
+
+Empty Username Test
+    Launch Mobile Application
+    Login Empty Username
+    Verify Failed Login
+    Close Application
+
+Empty Password Test
+    Launch Mobile Application
+    Login Empty Password
     Verify Failed Login
     Close Application
 
@@ -40,9 +52,23 @@ Register User
     Input Text    ${Form.Register.Confirm.Txt}    isfahani
     Click Element    ${Form.Register.Create.Btn}    
         
-Login User
+Login
     Input Text    ${Form.Login.Username.Txt}    imam.isfahani   
     Input Text    ${Form.Login.Password.Txt}    isfahani
+    Sleep    2s
+    Click Element    ${Form.Login.Login.Btn}
+    Click Element    ${Form.Login.Login.Btn}
+    Sleep    1s
+
+Login Empty Username  
+    Input Text    ${Form.Login.Password.Txt}    wrong
+    Sleep    2s
+    Click Element    ${Form.Login.Login.Btn}
+    Click Element    ${Form.Login.Login.Btn}
+    Sleep    1s
+
+Login Empty Password
+    Input Text    ${Form.Login.Username.Txt}    imam.isfahani
     Sleep    2s
     Click Element    ${Form.Login.Login.Btn}
     Click Element    ${Form.Login.Login.Btn}

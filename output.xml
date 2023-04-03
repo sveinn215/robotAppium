@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on darwin)" generated="20230403 11:41:47.094" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on darwin)" generated="20230403 19:29:59.582" rpa="false" schemaversion="3">
 <suite id="s1" name="Login" source="/Users/isfahani/Documents/robot/login.robot">
-<test id="s1-t1" name="Positive Test" line="12">
+<test id="s1-t1" name="Valid Account Test" line="12">
 <kw name="Launch Mobile Application">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>${APPIUM_SERVER}</arg>
@@ -17,52 +17,381 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |
 | strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
-<kw name="Capture Page Screenshot" library="AppiumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<status status="FAIL" starttime="20230403 11:41:52.034" endtime="20230403 11:41:52.035"/>
+<status status="PASS" starttime="20230403 19:29:59.762" endtime="20230403 19:30:08.442"/>
 </kw>
-<msg timestamp="20230403 11:41:52.036" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
-<status status="FAIL" starttime="20230403 11:41:47.274" endtime="20230403 11:41:52.038"/>
-</kw>
-<status status="FAIL" starttime="20230403 11:41:47.273" endtime="20230403 11:41:52.038"/>
+<status status="PASS" starttime="20230403 19:29:59.762" endtime="20230403 19:30:08.442"/>
 </kw>
 <kw name="Register User">
-<status status="NOT RUN" starttime="20230403 11:41:52.038" endtime="20230403 11:41:52.038"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Register.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:08.445" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/register'.</msg>
+<msg timestamp="20230403 19:30:09.009" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/register</msg>
+<status status="PASS" starttime="20230403 19:30:08.443" endtime="20230403 19:30:09.009"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:11.012" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230403 19:30:09.010" endtime="20230403 19:30:11.012"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Form.Register.Username.Txt}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230403 19:30:11.046" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editTextUserName</msg>
+<status status="PASS" starttime="20230403 19:30:11.012" endtime="20230403 19:30:11.046"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Register.Username.Txt}</arg>
+<arg>imam.isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:11.047" level="INFO">Typing text 'imam.isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editTextUserName'</msg>
+<msg timestamp="20230403 19:30:11.091" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editTextUserName</msg>
+<status status="PASS" starttime="20230403 19:30:11.046" endtime="20230403 19:30:11.092"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Register.Password.Txt}</arg>
+<arg>isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:11.093" level="INFO">Typing text 'isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editTextPassword'</msg>
+<msg timestamp="20230403 19:30:11.634" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editTextPassword</msg>
+<status status="PASS" starttime="20230403 19:30:11.092" endtime="20230403 19:30:11.635"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Register.Confirm.Txt}</arg>
+<arg>isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:11.636" level="INFO">Typing text 'isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editTextConfirmPassword'</msg>
+<msg timestamp="20230403 19:30:12.158" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editTextConfirmPassword</msg>
+<status status="PASS" starttime="20230403 19:30:11.635" endtime="20230403 19:30:12.159"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Register.Create.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:12.160" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/buttonCreateAccount'.</msg>
+<msg timestamp="20230403 19:30:12.692" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/buttonCreateAccount</msg>
+<status status="PASS" starttime="20230403 19:30:12.159" endtime="20230403 19:30:12.693"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:08.443" endtime="20230403 19:30:12.693"/>
 </kw>
 <kw name="Go Back" library="AppiumLibrary">
 <doc>Goes one step backward in the browser history.</doc>
-<status status="NOT RUN" starttime="20230403 11:41:52.039" endtime="20230403 11:41:52.039"/>
+<status status="PASS" starttime="20230403 19:30:12.693" endtime="20230403 19:30:13.326"/>
 </kw>
-<kw name="Login User">
-<status status="NOT RUN" starttime="20230403 11:41:52.039" endtime="20230403 11:41:52.039"/>
+<kw name="Login">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Login.Username.Txt}</arg>
+<arg>imam.isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:13.328" level="INFO">Typing text 'imam.isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editLogin'</msg>
+<msg timestamp="20230403 19:30:13.894" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editLogin</msg>
+<status status="PASS" starttime="20230403 19:30:13.326" endtime="20230403 19:30:13.895"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Login.Password.Txt}</arg>
+<arg>isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:13.896" level="INFO">Typing text 'isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editPasswordLogin'</msg>
+<msg timestamp="20230403 19:30:14.429" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editPasswordLogin</msg>
+<status status="PASS" starttime="20230403 19:30:13.895" endtime="20230403 19:30:14.429"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:16.430" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230403 19:30:14.429" endtime="20230403 19:30:16.430"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:16.432" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:17.278" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:16.431" endtime="20230403 19:30:17.278"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:17.280" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:17.359" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:17.278" endtime="20230403 19:30:17.359"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:18.360" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230403 19:30:17.359" endtime="20230403 19:30:18.360"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:13.326" endtime="20230403 19:30:18.361"/>
 </kw>
 <kw name="Verify Success Login">
-<status status="NOT RUN" starttime="20230403 11:41:52.039" endtime="20230403 11:41:52.040"/>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Form.Login.Success.Label}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230403 19:30:18.386" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/textView8</msg>
+<status status="PASS" starttime="20230403 19:30:18.361" endtime="20230403 19:30:18.386"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:18.361" endtime="20230403 19:30:18.386"/>
 </kw>
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="NOT RUN" starttime="20230403 11:41:52.040" endtime="20230403 11:41:52.040"/>
+<status status="PASS" starttime="20230403 19:30:18.386" endtime="20230403 19:30:18.647"/>
 </kw>
-<status status="FAIL" starttime="20230403 11:41:47.273" endtime="20230403 11:41:52.041">Execution terminated by signal</status>
+<status status="PASS" starttime="20230403 19:29:59.761" endtime="20230403 19:30:18.647"/>
 </test>
-<test id="s1-t2" name="Negative Test" line="20">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20230403 11:41:52.041" endtime="20230403 11:41:52.042">Test execution stopped due to a fatal error.</status>
+<test id="s1-t2" name="Invalid Account Test" line="20">
+<kw name="Launch Mobile Application">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230403 19:30:18.648" endtime="20230403 19:30:24.103"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:18.648" endtime="20230403 19:30:24.103"/>
+</kw>
+<kw name="Login">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Login.Username.Txt}</arg>
+<arg>imam.isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:24.105" level="INFO">Typing text 'imam.isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editLogin'</msg>
+<msg timestamp="20230403 19:30:24.742" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editLogin</msg>
+<status status="PASS" starttime="20230403 19:30:24.104" endtime="20230403 19:30:24.742"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Login.Password.Txt}</arg>
+<arg>isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:24.744" level="INFO">Typing text 'isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editPasswordLogin'</msg>
+<msg timestamp="20230403 19:30:25.300" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editPasswordLogin</msg>
+<status status="PASS" starttime="20230403 19:30:24.742" endtime="20230403 19:30:25.300"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:27.301" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230403 19:30:25.300" endtime="20230403 19:30:27.301"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:27.302" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:27.393" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:27.301" endtime="20230403 19:30:27.394"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:27.395" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:27.943" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:27.394" endtime="20230403 19:30:27.944"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:28.945" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230403 19:30:27.944" endtime="20230403 19:30:28.946"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:24.103" endtime="20230403 19:30:28.946"/>
+</kw>
+<kw name="Verify Failed Login">
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<arg>${Form.Login.Success.Label}</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<msg timestamp="20230403 19:30:28.967" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/textView8</msg>
+<status status="PASS" starttime="20230403 19:30:28.947" endtime="20230403 19:30:28.967"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230403 19:30:28.998" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:28.968" endtime="20230403 19:30:28.998"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:28.946" endtime="20230403 19:30:28.998"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230403 19:30:28.999" endtime="20230403 19:30:29.354"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:18.648" endtime="20230403 19:30:29.354"/>
 </test>
-<status status="FAIL" starttime="20230403 11:41:47.097" endtime="20230403 11:41:52.042"/>
+<test id="s1-t3" name="Empty Username Test" line="26">
+<kw name="Launch Mobile Application">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230403 19:30:29.357" endtime="20230403 19:30:33.879"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:29.356" endtime="20230403 19:30:33.879"/>
+</kw>
+<kw name="Login Empty Username">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Login.Password.Txt}</arg>
+<arg>wrong</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:33.881" level="INFO">Typing text 'wrong' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editPasswordLogin'</msg>
+<msg timestamp="20230403 19:30:34.485" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editPasswordLogin</msg>
+<status status="PASS" starttime="20230403 19:30:33.880" endtime="20230403 19:30:34.486"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:36.486" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230403 19:30:34.486" endtime="20230403 19:30:36.487"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:36.489" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:36.557" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:36.487" endtime="20230403 19:30:36.558"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:36.560" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:37.092" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:36.558" endtime="20230403 19:30:37.092"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:38.093" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230403 19:30:37.092" endtime="20230403 19:30:38.093"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:33.879" endtime="20230403 19:30:38.093"/>
+</kw>
+<kw name="Verify Failed Login">
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<arg>${Form.Login.Success.Label}</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<msg timestamp="20230403 19:30:38.113" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/textView8</msg>
+<status status="PASS" starttime="20230403 19:30:38.094" endtime="20230403 19:30:38.113"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230403 19:30:38.141" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:38.113" endtime="20230403 19:30:38.141"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:38.094" endtime="20230403 19:30:38.141"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230403 19:30:38.142" endtime="20230403 19:30:38.359"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:29.355" endtime="20230403 19:30:38.359"/>
+</test>
+<test id="s1-t4" name="Empty Password Test" line="32">
+<kw name="Launch Mobile Application">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" starttime="20230403 19:30:38.360" endtime="20230403 19:30:43.584"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:38.360" endtime="20230403 19:30:43.584"/>
+</kw>
+<kw name="Login Empty Password">
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Form.Login.Username.Txt}</arg>
+<arg>imam.isfahani</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:43.586" level="INFO">Typing text 'imam.isfahani' into text field 'id=com.appsgallery.sagar.loginregistrationexample:id/editLogin'</msg>
+<msg timestamp="20230403 19:30:44.127" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/editLogin</msg>
+<status status="PASS" starttime="20230403 19:30:43.585" endtime="20230403 19:30:44.127"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:46.128" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230403 19:30:44.127" endtime="20230403 19:30:46.128"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:46.130" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:46.193" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:46.128" endtime="20230403 19:30:46.193"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20230403 19:30:46.195" level="INFO">Clicking element 'id=com.appsgallery.sagar.loginregistrationexample:id/login'.</msg>
+<msg timestamp="20230403 19:30:46.760" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:46.193" endtime="20230403 19:30:46.760"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230403 19:30:47.762" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230403 19:30:46.760" endtime="20230403 19:30:47.762"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:43.585" endtime="20230403 19:30:47.763"/>
+</kw>
+<kw name="Verify Failed Login">
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<arg>${Form.Login.Success.Label}</arg>
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<msg timestamp="20230403 19:30:47.784" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/textView8</msg>
+<status status="PASS" starttime="20230403 19:30:47.763" endtime="20230403 19:30:47.784"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Form.Login.Login.Btn}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20230403 19:30:47.813" level="INFO">criteria is com.appsgallery.sagar.loginregistrationexample:id/login</msg>
+<status status="PASS" starttime="20230403 19:30:47.785" endtime="20230403 19:30:47.813"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:47.763" endtime="20230403 19:30:47.813"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20230403 19:30:47.813" endtime="20230403 19:30:48.027"/>
+</kw>
+<status status="PASS" starttime="20230403 19:30:38.360" endtime="20230403 19:30:48.028"/>
+</test>
+<status status="PASS" starttime="20230403 19:29:59.585" endtime="20230403 19:30:48.029"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="Login">Login</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230403 11:41:52.036" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
 </errors>
 </robot>
