@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on darwin)" generated="20230403 11:41:47.094" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="/Users/isfahani/Documents/robot/login.robot">
+<test id="s1-t1" name="Positive Test" line="12">
+<kw name="Launch Mobile Application">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${APPIUM_SERVER}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="FAIL" starttime="20230403 11:41:52.034" endtime="20230403 11:41:52.035"/>
+</kw>
+<msg timestamp="20230403 11:41:52.036" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+<status status="FAIL" starttime="20230403 11:41:47.274" endtime="20230403 11:41:52.038"/>
+</kw>
+<status status="FAIL" starttime="20230403 11:41:47.273" endtime="20230403 11:41:52.038"/>
+</kw>
+<kw name="Register User">
+<status status="NOT RUN" starttime="20230403 11:41:52.038" endtime="20230403 11:41:52.038"/>
+</kw>
+<kw name="Go Back" library="AppiumLibrary">
+<doc>Goes one step backward in the browser history.</doc>
+<status status="NOT RUN" starttime="20230403 11:41:52.039" endtime="20230403 11:41:52.039"/>
+</kw>
+<kw name="Login User">
+<status status="NOT RUN" starttime="20230403 11:41:52.039" endtime="20230403 11:41:52.039"/>
+</kw>
+<kw name="Verify Success Login">
+<status status="NOT RUN" starttime="20230403 11:41:52.039" endtime="20230403 11:41:52.040"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="NOT RUN" starttime="20230403 11:41:52.040" endtime="20230403 11:41:52.040"/>
+</kw>
+<status status="FAIL" starttime="20230403 11:41:47.273" endtime="20230403 11:41:52.041">Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="Negative Test" line="20">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20230403 11:41:52.041" endtime="20230403 11:41:52.042">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" starttime="20230403 11:41:47.097" endtime="20230403 11:41:52.042"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230403 11:41:52.036" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
+</errors>
+</robot>
